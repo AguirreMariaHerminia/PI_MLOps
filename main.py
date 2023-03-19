@@ -8,7 +8,7 @@ async def ruta():
     return {'API de MHAguirre'}
 
 #cargamos los csv para empezar a trabajar 
-plataformas = pd.read_csv(r'/Users/herminiaaguirre/Desktop/Henry/Proyectos varios/4. PI/MLOps/ML_ETL.csv')
+plataformas = pd.read_csv('./ML_ETL.csv')
 
 @app.get('/max_duration')
 #funcion 1 : devulve la pelicula con mayor duracion del año indicado segun cada plataforma
