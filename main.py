@@ -8,7 +8,7 @@ async def ruta():
     return {'API de MHAguirre'}
 
 #cargamos los csv para empezar a trabajar 
-plataformas = pd.read_csv(r'/Users/herminiaaguirre/Desktop/Henry/Proyectos varios/4. PI/MLOps/ML_ETL.csv')
+plataformas = pd.read_csv(r'/Users/herminiaaguirre/Desktop/Henry/Proyectos varios/4.PI/MLOps/ML_ETL.csv')
 
 @app.get('/max_duration')
 #funcion 1 : devulve la pelicula con mayor duracion del año indicado segun cada plataforma
@@ -59,3 +59,19 @@ def get_actor(plataform:str, año:int):
         return 'la plataforma no brinda esta informacion'
     else:
         return max(dict,key=dict.get)
+    
+
+
+@app.get ('/actor mas recurrente por año y por plataforma ')
+def get_actor(platform:str, anio:int):
+    result = data[(data['platform']==platform) & (data['release_year']==anio)]
+    
+    lista=[]
+    result = result['cast'].dropna()
+    for i in result:
+        if i != 'sin dato':
+             l= [elemento.strip() for elemento in i.split(',')]
+             lista+=l
+
+    mas_frecuentes = Counter(lista).most_common()
+    return mas_frecuentes[0][0]
