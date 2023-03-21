@@ -51,7 +51,7 @@ Para realizar este proyecto, primero ingesté y normalicé los datos, lo que se 
 Link para visualiazar el EDA con la librería sweetviz file:///Users/herminiaaguirre/Desktop/Henry/Proyectos%20varios/4.PI/MLOps/SWEETVIZ_REPORT.html
 
 
-<b> Para una explicación más profunda sobre cómo funciona el proyecto, les dejo un link al video: **https://youtu.be/6BszacRFFlk**</b>
+<b> Para una explicación más profunda sobre cómo funciona el proyecto, les dejo un link al video: ** https://drive.google.com/file/d/1cXLcZavVPXoWfod4J9eT4M5i9RdMp7Ss/view?usp=share_link**</b>
 
 
 
