@@ -7,7 +7,7 @@ app = FastAPI()
 async def ruta():
     return {'API de MHAguirre'}
 
-#cargamos los csv para empezar a trabajar
+#cargo los csv para empezar a trabajar
 plataformas = pd.read_csv(r'/Users/herminiaaguirre/Desktop/Henry/Proyectos varios/4.PI/MLOps/ML_ETL.csv')
 
 @app.get('/max_duration')

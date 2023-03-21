@@ -15,9 +15,11 @@ En primer lugar, comencé el realizando las transformaciones de los datos (ETL),
 En segundo lugar,  ejecuté un prceso de EDA a los datos recibidos, para armar el sistema de recomendación de películas con machine learnig. 
 
 
+
 <hr>  
 
 <b>Luego de la creación de la API, se espera que pueda responder diferentes consultas 📑: </b>
+
 
 + Funcion 1 : devulve la pelicula con mayor duracion del año indicado segun cada plataforma.
 
@@ -39,11 +41,18 @@ En segundo lugar,  ejecuté un prceso de EDA a los datos recibidos, para armar e
 
 <hr>
 
+
 En el siguiente link se puede acceder al deploy realizado https://aguirremariaherminia.onrender.com/docs#/
 
 
-
-
+Para realizar este proyecto, primero ingesté y normalicé los datos, lo que se puede ver en los archivos adjuntos en este repositorio</h3>
 
 
 Link para visualiazar el EDA con la librería sweetviz file:///Users/herminiaaguirre/Desktop/Henry/Proyectos%20varios/4.PI/MLOps/SWEETVIZ_REPORT.html
+
+
+<b> Para una explicación más profunda sobre cómo funciona el proyecto, les dejo un link al video: **https://youtu.be/6BszacRFFlk**</b>
+
+
+
+<p> Muchas gracias por llegar hasta acá! 
