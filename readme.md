@@ -32,9 +32,18 @@ En segundo lugar,  ejecuté un prceso de EDA a los datos recibidos, para armar e
 
     El request def get_count_plataform(plataform:str):
 
-+ Funcion 4: devuelve en nombre del actor por plataforma y por año, más recurrente
-  El request debe ser: get_actor(plataforma, año).  
++ Funcion 4: devuelve en nombre del actor por plataforma y por año, más recurrente.
+     
+    El request debe ser: get_actor(plataforma, año)  
 </ul>
 
 <hr>
 
+En el siguiente link se puede acceder al deploy realizado https://aguirremariaherminia.onrender.com/docs#/
+
+
+
+
+
+
+Link para visualiazar el EDA con la librería sweetviz file:///Users/herminiaaguirre/Desktop/Henry/Proyectos%20varios/4.PI/MLOps/SWEETVIZ_REPORT.html
