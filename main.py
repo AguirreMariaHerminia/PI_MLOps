@@ -11,30 +11,38 @@ async def ruta():
 plataformas = pd.read_csv(r'/Users/herminiaaguirre/Desktop/Henry/Proyectos varios/4.PI/MLOps/ML_ETL.csv')
 
 @app.get('/max_duration')
-#funcion 1 : devulve la pelicula con mayor duracion del año indicado segun cada plataforma
-def get_max_duration(año:int,tipo_duracion:str, platforma:str):
-    lista = plataformas[(plataformas['release_year'] == año) & (plataformas['duration_type'] == tipo_duracion) & (plataformas['plataform'] == platforma)]
+#funcion 1: devulve la pelicula con mayor duracion del año indicado segun cada plataforma
+def get_max_duration(año, plataforma,tipo_duracion[min o season]):
+    lista = plataformas[(plataformas['release_year'] == año) & (plataformas['duration_type'] == tipo_duracion) & (plataformas['plataform'] == plataforma)]
     lista = lista.loc[lista['duration_int'] == lista['duration_int'].max()]
     respuesta = lista['title']
     return respuesta
 
 @app.get('/cantidad de peliculas')
-def get_score_count (plataforma:str,puntaje:float,año:int):
+#funcion 2: devuelve la cantidad de películas
+def get_score_count (plataforma,puntaje,año):
     lista2 = plataformas[(plataformas['plataform'] == plataforma) & (plataformas['score'] > puntaje) & (plataformas['release_year'] == año)]
     respuesta2 = lista2.shape[0]
     return respuesta2
 
 @app.get ('/cantidad de peliculas por plataforma')
-def get_count_plataform(plataform:str):
+#funcion 3: devuelve la cantidad de películas por plataforma
+def get_count_plataform(plataform):
     lista3 = plataformas[(plataformas['plataform']==plataform)]
     count = lista3.shape[0]
     return count
 
 
 @app.get ('/actor mas recurrente por año y por plataforma ')
-def get_actor(plataform:str, año:int):
-    result = plataformas[(plataformas['plataform']==plataform) & (plataformas['release_year']==año)]
-    result['cast'] = np.replace(np.nam, 'Sin dato')
+#funcion 4: 
+def get_actor(plataforma, año):
+    result = plataformas[(plataformas['plataforma']==plataforma) & (plataformas['release_year']==año)]
+    for i in result['cast']:
+        if i != 'Sin dato ':
+            i=i.replace(', ' , ',')
+        else:
+            pass
+   
     lista4=[]
     for i in result['cast']:
         if i != 'Sin dato':
@@ -46,6 +54,7 @@ def get_actor(plataform:str, año:int):
                     pass
         else:
             pass
+        
     lista4=list(set(lista4))
     contador = 0
     dict={}
@@ -59,19 +68,3 @@ def get_actor(plataform:str, año:int):
         return 'la plataforma no brinda esta informacion'
     else:
         return max(dict,key=dict.get)
-    
-
-
-@app.get ('/actor mas recurrente por año y por plataforma ')
-def get_actor(platform:str, anio:int):
-    result = data[(data['platform']==platform) & (data['release_year']==anio)]
-    
-    lista=[]
-    result = result['cast'].dropna()
-    for i in result:
-        if i != 'sin dato':
-             l= [elemento.strip() for elemento in i.split(',')]
-             lista+=l
-
-    mas_frecuentes = Counter(lista).most_common()
-    return mas_frecuentes[0][0]
