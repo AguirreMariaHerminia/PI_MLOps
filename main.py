@@ -7,12 +7,12 @@ app = FastAPI()
 async def ruta():
     return {'API de MHAguirre'}
 
-#cargamos los csv para empezar a trabajar 
+#cargamos los csv para empezar a trabajar
 plataformas = pd.read_csv(r'/Users/herminiaaguirre/Desktop/Henry/Proyectos varios/4.PI/MLOps/ML_ETL.csv')
 
 @app.get('/max_duration')
 #funcion 1: devulve la pelicula con mayor duracion del año indicado segun cada plataforma
-def get_max_duration(año, plataforma,tipo_duracion[min o season]):
+def get_max_duration(año, plataforma,tipo_duracion):
     lista = plataformas[(plataformas['release_year'] == año) & (plataformas['duration_type'] == tipo_duracion) & (plataformas['plataform'] == plataforma)]
     lista = lista.loc[lista['duration_int'] == lista['duration_int'].max()]
     respuesta = lista['title']
